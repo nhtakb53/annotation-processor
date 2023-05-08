@@ -19,7 +19,7 @@ import javax.tools.Diagnostic;
 import java.io.IOException;
 import java.util.Set;
 
-@AutoService(Processor.class)
+@AutoService(Processor.class) // META-INF/services/javax.annotation.processing.Processor 파일을 자동으로 생성
 public class MoneyProcessor extends AbstractProcessor {
 
     // 이 프로세서가 어떤 애노테이션을 처리 할 것 인지 정하는 메소드
