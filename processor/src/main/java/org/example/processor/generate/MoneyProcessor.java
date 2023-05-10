@@ -1,4 +1,4 @@
-package org.example;
+package org.example.processor.generate;
 
 import com.google.auto.service.AutoService;
 import com.squareup.javapoet.ClassName;
