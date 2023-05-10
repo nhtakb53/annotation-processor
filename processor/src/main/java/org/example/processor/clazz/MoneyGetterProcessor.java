@@ -3,6 +3,7 @@ package org.example.processor.clazz;
 import com.google.auto.service.AutoService;
 
 import javax.annotation.processing.*;
+import javax.lang.model.SourceVersion;
 import javax.lang.model.element.*;
 import javax.lang.model.type.TypeMirror;
 import javax.lang.model.util.Elements;
@@ -12,6 +13,8 @@ import java.io.*;
 import java.util.*;
 
 @AutoService(Processor.class)
+@SupportedSourceVersion(SourceVersion.RELEASE_17)
+@SupportedAnnotationTypes("org.example.processor.clazz.MoneyGetterProcessor")
 public class MoneyGetterProcessor extends AbstractProcessor {
 
     private Elements elementUtils;
