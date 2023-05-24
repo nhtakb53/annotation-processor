@@ -1,10 +1,8 @@
 package org.example.lombok;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
 public class Money {
     private String house;
     private String shoes;

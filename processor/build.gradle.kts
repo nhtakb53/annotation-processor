@@ -13,8 +13,10 @@ repositories {
 dependencies {
     implementation("com.squareup:javapoet:1.13.0")
     implementation("com.google.auto.service:auto-service:1.0-rc7")
+    implementation("net.bytebuddy:byte-buddy:1.14.4")
     annotationProcessor("com.squareup:javapoet:1.13.0")
     annotationProcessor("com.google.auto.service:auto-service:1.0-rc7")
+    annotationProcessor("net.bytebuddy:byte-buddy:1.14.4")
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
 }
