@@ -51,11 +51,10 @@ public class MyAnnotationProcessor extends AbstractProcessor {
 
     private void enhanceClass(TypeElement typeElement) throws IOException, ReflectiveOperationException {
         String className = typeElement.getQualifiedName().toString();
-        System.out.println("MyAnnotation Processor process" + className);
-        Class<?> clazz = Class.forName(className);
+        Class<?> clazz = Class.forName("MoneyTest");
 
         DynamicType.Unloaded<?> dynamicType = new ByteBuddy()
-                .redefine(clazz)
+                .redefine(typeElement.getClass())
                 .method(ElementMatchers.isGetter().and(ElementMatchers.isPublic().and(ElementMatchers.isFinal())))
                 .intercept(MethodDelegation.to(FieldGetterInterceptor.class))
                 .make();
@@ -68,7 +67,7 @@ public class MyAnnotationProcessor extends AbstractProcessor {
         Field field = Class.forName("java.lang.ClassLoader").getDeclaredField("classes");
         field.setAccessible(true);
         Set<Class<?>> classes = (Set<Class<?>>) field.get(getClass().getClassLoader());
-        classes.remove(clazz);
+//        classes.remove(clazz);
         classes.add(enhancedClass);
     }
 

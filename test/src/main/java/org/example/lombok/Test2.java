@@ -2,12 +2,12 @@ package org.example.lombok;
 
 import lombok.Data;
 
-public class Money2 {
+public class Test2 {
     private String house;
     private String shoes;
 
     private String getHouse() {
-        Money m = new Money();
+        Test m = new Test();
 //        m.getHouse();
         m.setHouse("house");
         return this.house;
